@@ -1,0 +1,21 @@
+CREATE TABLE Transaksi (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+tanggal_order DATE NOT NULL,
+Status_Pelunasan VARCHAR(30) NOT NULL,
+tanggal_pembayaran DATE
+);
+
+INSERT INTO Transaksi (tanggal_order, status_pelunasan, tanggal_pembayaran)
+VALUES (12-02-2022, 'Lunas', 12-02-2022);
+
+CREATE TABLE detail_transaksi (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_transaksi int(6) FOREIGN KEY REFERENCES Transaksi(id),
+harga int,
+jumlah int,
+subtotal int
+);
+
+INSERT INTO detail_transaksi (harga, jumlah, subtotal)
+VALUES (20000, 2, 40000);
+
